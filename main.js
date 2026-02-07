@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     const binaryRain = document.getElementById('binaryRain');
     const binaryChars = '01';
     let columns = Math.floor(window.innerWidth / 20);
     let rows = Math.floor(window.innerHeight / 24);
 
     function createBinaryRain() {
+        if (!binaryRain) return;
+
         let output = '';
         for (let r = 0; r < rows; r++) {
             let line = '';
@@ -20,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let row = 0;
     const binaryInterval = setInterval(() => {
+        if (!binaryRain) return;
+
         const lines = binaryRain.textContent.split('\n');
         lines[row] = lines[row].split('').map(() =>
             binaryChars[Math.floor(Math.random() * binaryChars.length)]
@@ -30,58 +35,89 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const card = document.querySelector('.hologram-card');
 
-    window.addEventListener('mousemove', (e) => {
-        const x = e.clientX - window.innerWidth / 2;
-        const y = e.clientY - window.innerHeight / 2;
+    if (card) {
+        window.addEventListener('mousemove', (e) => {
+            const x = e.clientX - window.innerWidth / 2;
+            const y = e.clientY - window.innerHeight / 2;
 
-        const tiltX = (y / window.innerHeight) * 10;
-        const tiltY = -(x / window.innerWidth) * 10;
-        const depth = Math.sqrt(x * x + y * y) / 100;
+            const tiltX = (y / window.innerHeight) * 10;
+            const tiltY = -(x / window.innerWidth) * 10;
+            const depth = Math.sqrt(x * x + y * y) / 100;
 
-        card.style.transform = `
-            rotateX(${tiltX}deg) 
-            rotateY(${tiltY}deg) 
-            translateZ(${depth * 20}px)
-        `;
+            card.style.transform = `
+                rotateX(${tiltX}deg) 
+                rotateY(${tiltY}deg) 
+                translateZ(${depth * 20}px)
+            `;
 
-        card.style.boxShadow = `
-            ${x / 20}px ${y / 20}px 30px rgba(0,0,0,0.7),
-            0 0 0 1px rgba(255,255,255,0.1)
-        `;
-    });
+            card.style.boxShadow = `
+                ${x / 20}px ${y / 20}px 30px rgba(0,0,0,0.7),
+                0 0 0 1px rgba(255,255,255,0.1)
+            `;
+        });
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)';
-        card.style.boxShadow = `
-            0 0 0 1px rgba(255,255,255,0.1),
-            0 0 30px rgba(0,0,0,0.5)
-        `;
-    });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)';
+            card.style.boxShadow = `
+                0 0 0 1px rgba(255,255,255,0.1),
+                0 0 30px rgba(0,0,0,0.5)
+            `;
+        });
 
-    const gridSize = 20;
-    const gridOpacity = 0.03;
+        const gridSize = 20;
+        const gridOpacity = 0.03;
 
-    function createGrid() {
-        const grid = document.createElement('div');
-        grid.style.position = 'absolute';
-        grid.style.top = '0';
-        grid.style.left = '0';
-        grid.style.width = '100%';
-        grid.style.height = '100%';
-        grid.style.backgroundImage = `
-            linear-gradient(rgba(255,255,255,${gridOpacity}) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,${gridOpacity}) 1px, transparent 1px)
-        `;
-        grid.style.backgroundSize = `${gridSize}px ${gridSize}px`;
-        grid.style.pointerEvents = 'none';
-        card.appendChild(grid);
+        function createGrid() {
+            const grid = document.createElement('div');
+            grid.style.position = 'absolute';
+            grid.style.top = '0';
+            grid.style.left = '0';
+            grid.style.width = '100%';
+            grid.style.height = '100%';
+            grid.style.backgroundImage = `
+                linear-gradient(rgba(255,255,255,${gridOpacity}) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,${gridOpacity}) 1px, transparent 1px)
+            `;
+            grid.style.backgroundSize = `${gridSize}px ${gridSize}px`;
+            grid.style.pointerEvents = 'none';
+            card.appendChild(grid);
+        }
+
+        createGrid();
     }
 
-    createGrid();
+    // =========================
+    // MUSIC CONTROL
+    // =========================
+
+    const musicBtn = document.getElementById('musicToggle');
+    const bgMusic = document.getElementById('bgMusic');
+
+    if (musicBtn && bgMusic) {
+        const icon = musicBtn.querySelector('i');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (!isPlaying) {
+                bgMusic.play();
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+                musicBtn.classList.add('playing');
+                isPlaying = true;
+            } else {
+                bgMusic.pause();
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                musicBtn.classList.remove('playing');
+                isPlaying = false;
+            }
+        });
+    }
 
     window.addEventListener('resize', () => {
         columns = Math.floor(window.innerWidth / 20);
         rows = Math.floor(window.innerHeight / 24);
         createBinaryRain();
     });
+
 });

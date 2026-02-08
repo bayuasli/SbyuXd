@@ -609,3 +609,38 @@ body {
     50% { box-shadow: 0 0 30px var(--accent-color-1); }
     100% { box-shadow: 0 0 10px var(--accent-color-1); }
 }
+
+.tech-tag {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-right: 5px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.project-img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.project-tech {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}

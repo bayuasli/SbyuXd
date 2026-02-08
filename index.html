@@ -8,30 +8,31 @@
     <meta name="description"
         content="Halaman profil resmi SbyuXd, seorang pengembang web dari Kudus, Jawa Tengah. Jelajahi portofolio proyek dan keahlian di HTML, CSS, JavaScript, dan lainnya.">
     <meta name="keywords"
-        content="SbyuXd, web developer, frontend developer, backend developer, Kudus, portofolio, HTML, CSS, JavaScript, React, Node.js, UI/UX">
-    <meta name="author" content="SbyuXd">
+        content="SbyuXd, web developer, frontend developer, backend developer, Makassar, portofolio, HTML, CSS, JavaScript, React, Node.js, UI/UX,">
+    <meta name="author" content=" SbyuXd ">
 
     <link rel="icon" type="image/png" href="favicon.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+<!-- Music Button -->
+<button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+    <i class="fas fa-play"></i>
+</button>
+
+<audio id="bgMusic" loop>
+    <source src="https://raw.githubusercontent.com/bayuasli/dat1/main/uploads/16f10b-1770458315841.mp3" type="audio/mpeg">
+</audio>
 
 <body>
-    <!-- Floating Elements Background -->
-    <div class="floating-elements" id="floatingElements"></div>
-    
-    <!-- Music Button -->
-    <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
-        <i class="fas fa-play"></i>
-    </button>
-
-    <audio id="bgMusic" loop>
-        <source src="https://raw.githubusercontent.com/bayuasli/dat1/main/uploads/16f10b-1770458315841.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Background Effects -->
     <div class="background-effects">
         <canvas id="particles-js"></canvas>
         <div class="quantum-waves"></div>
@@ -59,175 +60,85 @@
     </div>
 
     <main class="container">
-        <!-- Profile Section -->
         <section class="profile-card" data-aos="fade-up" data-aos-duration="1000">
             <div class="profile-img-container" data-aos="zoom-in" data-aos-delay="200">
-                <img src="SbyuXd.jpg" alt="Foto profil SbyuXd" class="profile-img">
+                <img src="SbyuXd.jpg" alt="Foto profil SbyuXd, pengembang web dan kreator digital"
+                    class="profile-img">
             </div>
-            
-            <div class="profile-header">
-                <div class="name-container">
-                    <h1 class="name" data-aos="fade-up" data-aos-delay="400">SbyuXd</h1>
-                    <div class="verified-badge" data-aos="fade-up" data-aos-delay="450">
-                        <i class="fas fa-check"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="badge-container" data-aos="fade-up" data-aos-delay="500">
-                <span class="badge"><i class="fas fa-code"></i> Full Stack Developer</span>
-                <span class="badge"><i class="fas fa-palette"></i> UI/UX Designer</span>
-                <span class="badge"><i class="fas fa-rocket"></i> Digital Creator</span>
-            </div>
-            
-            <p class="tagline typewriter" data-aos="fade-up" data-aos-delay="550">sibayudeploy.vercel.app</p>
-            
-            <p class="bio" data-aos="fade-up" data-aos-delay="600">
-                Halo! Saya <strong>SbyuXd</strong> (Sibayu), seorang <strong>Full Stack Developer</strong> dari Kudus, Jawa Tengah. 
-                Saya berspesialisasi dalam membangun aplikasi web modern dengan fokus pada performa tinggi dan user experience yang optimal. 
-                Dengan pengalaman dalam berbagai teknologi, saya mampu mengubah ide kompleks menjadi solusi digital yang elegan dan fungsional.
-            </p>
+            <h1 class="name" data-aos="fade-up" data-aos-delay="400">SbyuXd</h1>
+            <p class="tagline" data-aos="fade-up" data-aos-delay="500">sibayudeploy.vercel.app</p>
+            <p class="bio" data-aos="fade-up" data-aos-delay="600">Halo dan selamat datang di halaman pribadi saya! Saya
+                 SbyuXd, Anda bisa memanggil saya Sibayu. Berasal dari Kudus, Jawa Tengah 
+                Indonesia, saya adalah seorang pengembang web yang bersemangat dalam
+                menciptakan solusi digital yang inovatif dan efisien. Saya memiliki pengalaman dalam membangun berbagai
+                jenis website, termasuk platform e-commerce,situs perusahaan, hingga aplikasi web
+                dinamis. Dengan fokus pada desain responsif dan pengalaman pengguna yang optimal, saya berdedikasi untuk
+                mengubah ide menjadi realitas digital yang fungsional dan menarik.</p>
 
             <div class="social-links" data-aos="fade-up" data-aos-delay="700">
-                <a href="https://www.youtube.com/@BayuCrasher s" class="social-link" target="_blank" title="YouTube Channel">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.instagram.com/sbyuxdbxx/" class="social-link" target="_blank" title="Instagram Profile">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://whatsapp.com/channel/0029VbBfYMYKQuJGSNkcv80a" class="social-link" target="_blank" title="WhatsApp Channel">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://github.com/bayuasli" class="social-link" target="_blank" title="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="social-link linkedin" target="_blank" title="LinkedIn Profile">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+                <a href="https://www.youtube.com/@BayuCrasher s" class="social-link" target="_blank"
+                    title="YouTube Channel" rel="noopener noreferrer"
+                    aria-label="Kunjungi profil YouTube SbyuXd"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/sbyuxdbxx/" class="social-link" target="_blank"
+                    title="Instagram Profile" rel="noopener noreferrer"
+                    aria-label="Kunjungi profil Instagram SbyuXd"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029VbBfYMYKQuJGSNkcv80a" class="social-link" target="_blank"
+                    title="WhatsApp Channel" rel="noopener noreferrer"
+                    aria-label="Bergabung dengan WhatsApp Channel SbyuXd"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://github.com/bayuasli" class="social-link" target="_blank" title="GitHub Profile"
+                    rel="noopener noreferrer" aria-label="Kunjungi profil SbyuXd"><i
+                        class="fab fa-github"></i></a>
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="stats-section" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-item">
-                <div class="stat-number" id="projectCount">0</div>
-                <div class="stat-label">Proyek Selesai</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="clientCount">0</div>
-                <div class="stat-label">Klien Puas</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="experienceCount">0</div>
-                <div class="stat-label">Tahun Pengalaman</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="codeHours">0</div>
-                <div class="stat-label">Jam Ngoding</div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="skills-section" data-aos="fade-up" data-aos-delay="400">
-            <h2 class="section-title">Tech Stack & Keahlian</h2>
+        <section class="skills-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <h2 class="section-title">Keahlian Saya</h2>
             <div class="skills-grid">
-                <div class="skill-item" data-skill="HTML5 Expert" data-aos="zoom-in" data-aos-delay="300">
+                <div class="skill-item" data-skill="HTML" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fab fa-html5"></i>
                     <span>HTML5</span>
                 </div>
-                <div class="skill-item" data-skill="CSS3 & Animations" data-aos="zoom-in" data-aos-delay="350">
+                <div class="skill-item" data-skill="CSS" data-aos="zoom-in" data-aos-delay="400">
                     <i class="fab fa-css3-alt"></i>
                     <span>CSS3</span>
                 </div>
-                <div class="skill-item" data-skill="JavaScript ES6+" data-aos="zoom-in" data-aos-delay="400">
+                <div class="skill-item" data-skill="JavaScript" data-aos="zoom-in" data-aos-delay="500">
                     <i class="fab fa-js"></i>
                     <span>JavaScript</span>
                 </div>
-                <div class="skill-item" data-skill="React Developer" data-aos="zoom-in" data-aos-delay="450">
-                    <i class="fab fa-react"></i>
-                    <span>React.js</span>
-                </div>
-                <div class="skill-item" data-skill="Node.js Backend" data-aos="zoom-in" data-aos-delay="500">
+
+                <div class="skill-item" data-skill="Node.js" data-aos="zoom-in" data-aos-delay="700">
                     <i class="fab fa-node-js"></i>
                     <span>Node.js</span>
                 </div>
-                <div class="skill-item" data-skill="MongoDB Database" data-aos="zoom-in" data-aos-delay="550">
+                <div class="skill-item" data-skill="MongoDB" data-aos="zoom-in" data-aos-delay="800">
                     <i class="fas fa-database"></i>
                     <span>MongoDB</span>
                 </div>
-                <div class="skill-item" data-skill="Git & Version Control" data-aos="zoom-in" data-aos-delay="600">
+                <div class="skill-item" data-skill="Git" data-aos="zoom-in" data-aos-delay="900">
                     <i class="fab fa-git-alt"></i>
-                    <span>Git</span>
+                    <span>Git & GitHub</span>
                 </div>
-                <div class="skill-item" data-skill="UI/UX Design" data-aos="zoom-in" data-aos-delay="650">
+                <div class="skill-item" data-skill="UI/UX Design" data-aos="zoom-in" data-aos-delay="1000">
                     <i class="fas fa-bezier-curve"></i>
-                    <span>UI/UX</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="projects-section" data-aos="fade-up" data-aos-delay="500">
-            <h2 class="section-title">Portofolio Proyek</h2>
-            <div class="projects-grid">
-                <div class="project-card" onclick="openModal('project1')">
-                    <div class="project-img-placeholder project-img-1"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p>Platform e-commerce full-stack dengan React, Node.js, dan MongoDB</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" onclick="openModal('project2')">
-                    <div class="project-img-placeholder project-img-2"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Dashboard Analytics</h3>
-                        <p>Dashboard analitik real-time dengan visualisasi data interaktif</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Express</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" onclick="openModal('project3')">
-                    <div class="project-img-placeholder project-img-3"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Mobile App UI/UX</h3>
-                        <p>Desain UI/UX untuk aplikasi mobile dengan prototipe interaktif</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">Adobe XD</span>
-                            <span class="tech-tag">Prototyping</span>
-                        </div>
-                    </div>
+                    <span>UI/UX Design</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Modal for Project Details -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modalContent">
-                <!-- Content will be loaded here -->
-            </div>
-        </div>
-    </div>
-
     <footer class="footer">
         <p>&copy; 2024 SbyuXd. Hak Cipta Dilindungi Undang-Undang.</p>
-        <p>Dibuat dengan <i class="fas fa-heart heart-icon"></i> untuk dunia digital</p>
+        <p>Dibuat dengan <i class="fas fa-heart"></i> untuk dunia digital.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            mirror: false
+        });
+    </script>
     <script src="main.js"></script>
     <script src="particles.js"></script>
 </body>

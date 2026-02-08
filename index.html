@@ -16,255 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        /* Tambahan CSS untuk elemen baru */
-        :root {
-            --primary-color: #00d4ff;
-            --secondary-color: #7b00ff;
-            --accent-color: #00ff9d;
-            --verified-blue: #1DA1F2;
-        }
-        
-        .verified-badge {
-            display: inline-block;
-            background: var(--verified-blue);
-            color: white;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            margin-left: 10px;
-            font-size: 12px;
-            line-height: 22px;
-            text-align: center;
-            position: relative;
-            top: -3px;
-            box-shadow: 0 0 10px rgba(29, 161, 242, 0.5);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(29, 161, 242, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(29, 161, 242, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(29, 161, 242, 0); }
-        }
-        
-        .profile-header {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .name-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .badge-container {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .badge {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-        }
-        
-        .projects-section {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px auto;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 1000px;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .project-card {
-            background: rgba(20, 20, 40, 0.7);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            cursor: pointer;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
-            border-color: var(--primary-color);
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .stats-section {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 50px auto;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            min-width: 150px;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            opacity: 0.8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .floating-elements {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .floating-element {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            opacity: 0.1;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-1000px) rotate(360deg); }
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-content {
-            background: rgba(30, 30, 60, 0.95);
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 800px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border: 2px solid var(--primary-color);
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: var(--primary-color);
-        }
-        
-        .skill-item {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-item::after {
-            content: attr(data-skill);
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: var(--primary-color);
-            color: black;
-            text-align: center;
-            padding: 5px;
-            font-weight: 600;
-            transition: bottom 0.3s ease;
-            border-radius: 0 0 10px 10px;
-        }
-        
-        .skill-item:hover::after {
-            bottom: 0;
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid var(--primary-color);
-            white-space: nowrap;
-            margin: 0 auto;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary-color) }
-        }
-    </style>
 </head>
 
 <body>
@@ -350,7 +101,7 @@
                 <a href="https://github.com/bayuasli" class="social-link" target="_blank" title="GitHub Profile">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://linkedin.com" class="social-link" target="_blank" title="LinkedIn Profile">
+                <a href="#" class="social-link linkedin" target="_blank" title="LinkedIn Profile">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
@@ -420,7 +171,7 @@
             <h2 class="section-title">Portofolio Proyek</h2>
             <div class="projects-grid">
                 <div class="project-card" onclick="openModal('project1')">
-                    <div class="project-img-placeholder" style="background: linear-gradient(45deg, #667eea, #764ba2); height: 200px;"></div>
+                    <div class="project-img-placeholder project-img-1"></div>
                     <div class="project-content">
                         <h3 class="project-title">E-Commerce Platform</h3>
                         <p>Platform e-commerce full-stack dengan React, Node.js, dan MongoDB</p>
@@ -433,7 +184,7 @@
                 </div>
                 
                 <div class="project-card" onclick="openModal('project2')">
-                    <div class="project-img-placeholder" style="background: linear-gradient(45deg, #f093fb, #f5576c); height: 200px;"></div>
+                    <div class="project-img-placeholder project-img-2"></div>
                     <div class="project-content">
                         <h3 class="project-title">Dashboard Analytics</h3>
                         <p>Dashboard analitik real-time dengan visualisasi data interaktif</p>
@@ -446,7 +197,7 @@
                 </div>
                 
                 <div class="project-card" onclick="openModal('project3')">
-                    <div class="project-img-placeholder" style="background: linear-gradient(45deg, #4facfe, #00f2fe); height: 200px;"></div>
+                    <div class="project-img-placeholder project-img-3"></div>
                     <div class="project-content">
                         <h3 class="project-title">Mobile App UI/UX</h3>
                         <p>Desain UI/UX untuk aplikasi mobile dengan prototipe interaktif</p>
@@ -473,163 +224,10 @@
 
     <footer class="footer">
         <p>&copy; 2024 SbyuXd. Hak Cipta Dilindungi Undang-Undang.</p>
-        <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff4757;"></i> untuk dunia digital</p>
+        <p>Dibuat dengan <i class="fas fa-heart heart-icon"></i> untuk dunia digital</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            once: true,
-            mirror: false,
-            duration: 1000
-        });
-
-        // Create floating elements
-        const floatingElements = document.getElementById('floatingElements');
-        const shapes = ['○', '□', '△', '◇', '☆', '⚡', '❖', '◈'];
-        
-        for (let i = 0; i < 20; i++) {
-            const element = document.createElement('div');
-            element.className = 'floating-element';
-            element.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
-            element.style.left = `${Math.random() * 100}%`;
-            element.style.top = `${Math.random() * 100}%`;
-            element.style.fontSize = `${Math.random() * 20 + 10}px`;
-            element.style.animationDelay = `${Math.random() * 20}s`;
-            element.style.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
-            floatingElements.appendChild(element);
-        }
-
-        // Animated counter for stats
-        function animateCounter(elementId, finalValue, duration = 2000) {
-            const element = document.getElementById(elementId);
-            let start = 0;
-            const increment = finalValue / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= finalValue) {
-                    element.textContent = finalValue + '+';
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start);
-                }
-            }, 16);
-        }
-
-        // Start counters when in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter('projectCount', 50);
-                    animateCounter('clientCount', 35);
-                    animateCounter('experienceCount', 3);
-                    animateCounter('codeHours', 2500);
-                    observer.disconnect();
-                }
-            });
-        });
-
-        observer.observe(document.querySelector('.stats-section'));
-
-        // Modal functionality
-        function openModal(projectId) {
-            const modal = document.getElementById('projectModal');
-            const modalContent = document.getElementById('modalContent');
-            
-            const projects = {
-                project1: {
-                    title: "E-Commerce Platform",
-                    description: "Platform e-commerce full-stack dengan fitur lengkap termasuk sistem pembayaran, manajemen inventori, dan dashboard admin.",
-                    tech: ["React", "Node.js", "Express", "MongoDB", "Redux", "Stripe API"],
-                    features: ["Responsive Design", "Real-time Updates", "Secure Payments", "Admin Dashboard", "Product Search & Filter"]
-                },
-                project2: {
-                    title: "Dashboard Analytics",
-                    description: "Dashboard analitik dengan visualisasi data real-time untuk monitoring performa bisnis.",
-                    tech: ["JavaScript", "D3.js", "Chart.js", "Express", "Socket.io"],
-                    features: ["Real-time Data", "Interactive Charts", "Custom Reports", "Data Export", "User Management"]
-                },
-                project3: {
-                    title: "Mobile App UI/UX Design",
-                    description: "Desain UI/UX lengkap untuk aplikasi mobile dengan prototipe interaktif dan design system.",
-                    tech: ["Figma", "Adobe XD", "Illustrator", "After Effects"],
-                    features: ["Wireframing", "Prototyping", "Design System", "User Testing", "Animation"]
-                }
-            };
-            
-            const project = projects[projectId];
-            modalContent.innerHTML = `
-                <h2 style="color: var(--primary-color); margin-bottom: 20px;">${project.title}</h2>
-                <p style="margin-bottom: 20px;">${project.description}</p>
-                <h3 style="color: var(--accent-color); margin-bottom: 10px;">Teknologi:</h3>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
-                    ${project.tech.map(tech => `<span style="background: rgba(0,212,255,0.2); padding: 5px 15px; border-radius: 20px; border: 1px solid var(--primary-color);">${tech}</span>`).join('')}
-                </div>
-                <h3 style="color: var(--accent-color); margin-bottom: 10px;">Fitur Utama:</h3>
-                <ul style="list-style: none; padding-left: 0;">
-                    ${project.features.map(feature => `<li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
-                        <i class="fas fa-check" style="color: var(--accent-color); position: absolute; left: 0;"></i> ${feature}
-                    </li>`).join('')}
-                </ul>
-            `;
-            
-            modal.style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('projectModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        // Music toggle functionality
-        const musicToggle = document.getElementById('musicToggle');
-        const bgMusic = document.getElementById('bgMusic');
-        
-        musicToggle.addEventListener('click', function() {
-            if (bgMusic.paused) {
-                bgMusic.play();
-                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-            } else {
-                bgMusic.pause();
-                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-            }
-        });
-
-        // Add hover effect to skill items
-        document.querySelectorAll('.skill-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.1)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
-
-        // Binary rain effect
-        const binaryRain = document.getElementById('binaryRain');
-        for (let i = 0; i < 50; i++) {
-            const binary = document.createElement('div');
-            binary.textContent = Math.random() > 0.5 ? '0' : '1';
-            binary.style.position = 'absolute';
-            binary.style.left = `${Math.random() * 100}%`;
-            binary.style.top = `${Math.random() * 100}%`;
-            binary.style.color = `rgba(0, 212, 255, ${Math.random() * 0.5 + 0.2})`;
-            binary.style.fontSize = `${Math.random() * 10 + 10}px`;
-            binary.style.animation = `fall ${Math.random() * 5 + 3}s linear infinite`;
-            binary.style.animationDelay = `${Math.random() * 2}s`;
-            binaryRain.appendChild(binary);
-        }
-    </script>
-    
     <script src="main.js"></script>
     <script src="particles.js"></script>
 </body>
